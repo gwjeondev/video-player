@@ -132,7 +132,7 @@ const handleFullScreen = () => {
   } else if (videoPlayer.webkitRequestFullscreen) {
     videoPlayer.webkitRequestFullscreen();
   } else if (videoPlayer.mozRequestFullscreen) {
-    videoContainer.mozRequestFullscreen();
+    videoPlayer.mozRequestFullscreen();
   } else if (videoPlayer.msRequestFullscreen) {
     videoPlayer.msRequestFullscreen();
   }
