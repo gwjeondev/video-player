@@ -28,13 +28,20 @@ const formatDate = seconds => {
   return `${minutes}:${totalSeconds}`;
 };
 
+const videoPlay = () => {
+  video.play();
+  statusBtn.innerHTML = '<i class="fas fa-pause"></i>';
+};
+
+const videoPause = () => {
+  video.pause();
+  statusBtn.innerHTML = '<i class="fas fa-play"></i>';
+};
 const handleStatusBtn = () => {
   if (video.paused) {
-    video.play();
-    statusBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    videoPlay();
   } else {
-    video.pause();
-    statusBtn.innerHTML = '<i class="fas fa-play"></i>';
+    videoPause();
   }
 };
 
@@ -146,6 +153,7 @@ const getCurrentTime = () => {
 };
 
 const getTotalTime = () => {
+  videoPlay();
   const duration = video.duration;
   const totalPlay = formatDate(duration);
   totalTime.innerText = totalPlay;
@@ -156,6 +164,7 @@ const init = () => {
   video.addEventListener("click", handleStatusBtn);
   video.addEventListener("loadedmetadata", getTotalTime);
   video.addEventListener("timeupdate", handleProgress);
+  video.addEventListener("ended", videoPlay);
   videoPlayer.addEventListener("mousemove", handleVideoControlMove);
   videoPlayer.addEventListener("mouseleave", handleVideoControlLeave);
   progress.addEventListener("click", handleProgressBar);
