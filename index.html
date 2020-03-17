@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Player</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://serranoarevalo.github.io/notflix/9bfd1023900e31286103369c803c7ee9.ogv"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="videoPlayer" class="videoPlayer">
+      <video width="700px" src="./video.mp4"></video>
+      <div id="videoControl" class="video__controls">
+        <div id="status-btn" class="video__playpause">
+          <i class="fas fa-play"></i>
+        </div>
+        <div id="progress" class="video__progress">
+          <div id="progress-bar" class="video__progressbar"></div>
+        </div>
+        <div class="video__time">
+          <span id="currentTime" class="video__current">00:00</span>
+          <span>/</span>
+          <span id="totalTime" class="video__duration">00:00</span>
+        </div>
+        <div class="video__volumectl">
+          <input
+            type="range"
+            id="volumeBar"
+            class="video__volumebar"
+            min="0"
+            max="1"
+            value="0.5"
+            step="0.1"
+          />
+          <div id="volume-btn" class="video__volume">
+            <i class="fas fa-volume-up"></i>
+          </div>
+        </div>
+        <div id="full-btn" class="video__full">
+          <i class="fas fa-compress"></i>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
